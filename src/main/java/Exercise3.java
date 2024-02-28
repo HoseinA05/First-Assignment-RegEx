@@ -11,15 +11,15 @@ public class Exercise3 {
     */
 
     public static String extractURL(String text) {
-        String regex = "write your regex pattern here!";  // TODO
+//        String regex = "\\b(?:https?|ftp)://\\S+\\b";
+        String regex = "\\b(https?)://\\S+\\b";
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
 
         if (matcher.find()) {
             return matcher.group();
-        }
-        else{
+        }else{
             return null;
         }
     }
@@ -29,8 +29,12 @@ public class Exercise3 {
      */
 
     public static boolean validateEmail(String email) {
-        // TODO
-        return false;
+        String regex = "\\b[\\w.\\-_]+@\\w+\\.\\S+\\b";
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.find();
     }
 
     /*
@@ -39,8 +43,15 @@ public class Exercise3 {
 
     public static List<String> findWordsWithRepeatLetters(String input) {
         List<String> wordsWithRepeatLetters = new ArrayList<>();
+        String regex = "\\b\\w*(\\w)\\1\\w*\\b";
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(input);
+
+        while (matcher.find()) {
+            wordsWithRepeatLetters.add(matcher.group());
+        }
         return wordsWithRepeatLetters;
-        // TODO
     }
 
     /*
@@ -56,6 +67,12 @@ public class Exercise3 {
     }
 
     public static void main(String[] args) {
-        // test your code here!
+//        String text = "and another hello_World@geeksforgeeks.org URL: http://www.example.org/";
+//        boolean extractedURL = validateEmail(text);
+//        System.out.println("Extracted URL: " + extractedURL);
+//        System.out.print(extractedURL);
+//        String input = "apple orange pear pineapple banana sentence with some words like hello, book, and happy.";
+//        List<String> wordsWithRepeatLetters = findWordsWithRepeatLetters(input);
+//        System.out.println("Words with repeated letters: " + wordsWithRepeatLetters);
     }
 }
