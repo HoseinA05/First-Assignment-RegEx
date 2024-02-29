@@ -70,8 +70,8 @@ public class Exercise3 {
 //        boolean extractedURL = validateEmail(text);
 //        System.out.println("Extracted URL: " + extractedURL);
 //        System.out.print(extractedURL);
-        String input = "apple orange pear pineapple banana sentence with some words like hello, book, and happy.";
-        List<String> wordsWithRepeatLetters = findWordsWithRepeatLetters(input);
-        System.out.println("Words with repeated letters: " + wordsWithRepeatLetters);
+//        String input = "apple orange pear pineapple banana sentence with some words like hello, book, and happy.";
+//        List<String> wordsWithRepeatLetters = findWordsWithRepeatLetters(input);
+//        System.out.println("Words with repeated letters: " + wordsWithRepeatLetters);
     }
 }
