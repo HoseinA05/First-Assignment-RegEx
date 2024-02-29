@@ -11,7 +11,6 @@ public class Exercise3 {
     */
 
     public static String extractURL(String text) {
-//        String regex = "\\b(?:https?|ftp)://\\S+\\b";
         String regex = "\\b(https?)://\\S+\\b";
 
         Pattern pattern = Pattern.compile(regex);
@@ -43,7 +42,7 @@ public class Exercise3 {
 
     public static List<String> findWordsWithRepeatLetters(String input) {
         List<String> wordsWithRepeatLetters = new ArrayList<>();
-        String regex = "\\b\\w*(\\w)\\1\\w*\\b";
+        String regex = "\\b(\\w*(\\w)\\w*\\2\\w*)+\\b";
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(input);
@@ -71,8 +70,8 @@ public class Exercise3 {
 //        boolean extractedURL = validateEmail(text);
 //        System.out.println("Extracted URL: " + extractedURL);
 //        System.out.print(extractedURL);
-//        String input = "apple orange pear pineapple banana sentence with some words like hello, book, and happy.";
-//        List<String> wordsWithRepeatLetters = findWordsWithRepeatLetters(input);
-//        System.out.println("Words with repeated letters: " + wordsWithRepeatLetters);
+        String input = "apple orange pear pineapple banana sentence with some words like hello, book, and happy.";
+        List<String> wordsWithRepeatLetters = findWordsWithRepeatLetters(input);
+        System.out.println("Words with repeated letters: " + wordsWithRepeatLetters);
     }
 }
